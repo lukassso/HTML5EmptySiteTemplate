@@ -597,6 +597,12 @@ nav {
   font-weight: 700;
   text-align: center; }
 
+.aster1 p {
+  font-size: 0.8rem;
+  font-weight: 200;
+  text-align: left;
+  margin: 0.6rem; }
+
 footer {
   padding: 1rem 0;
   text-align: center; }
