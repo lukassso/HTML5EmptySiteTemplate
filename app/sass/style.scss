@@ -5,6 +5,8 @@ $grid-columns: 12;
 $sm: 48rem;
 $md: 62rem;
 $lg: 75rem;
+$color-instagram: #833ab4;
+$color-facebook: #3b5998;
 
 .container {
   margin: auto;
@@ -27,6 +29,11 @@ $lg: 75rem;
     display: block;
   }
 }
+// .related-products{
+// 	padding: 0 0 1.5rem 0;
+// 	border-bottom: 0.0625rem solid #e3dddd;
+// }
+
 .first {
   -webkit-box-ordinal-group: 0;
   -ms-flex-order: -1;
@@ -139,7 +146,7 @@ $lg: 75rem;
 
 /* End 12columns.css | Created by Katherine Kato | Released under the MIT license */
 
-@import url('fonts/josefin-sans-v13-latin-regular.woff');
+@import url('https://fonts.googleapis.com/css?family=Raleway');
 
 $white: #fff;
 $black: #333;
@@ -158,7 +165,7 @@ $button-hover: #565657;
 }
 
 body {
-	font-family: 'Josefin Sans', sans-serif;
+	font-family: 'Raleway', sans-serif;
 	font-size: 1.35rem;
 	line-height: 1.3;
 	margin: 0;
@@ -326,7 +333,9 @@ nav {
 		transition: transform 0.3s ease-out;
 	}
 }
-
+.b2{
+	margin: 2rem 0.6rem;
+}
 .container {
 	margin: auto;
 	padding: 0 1rem;
@@ -355,11 +364,51 @@ nav {
 		}
 	}
 }
+.offer-box {
+	margin-top: 3rem;
+}
+.offer-box .offer-block {
+	border: 0.01rem solid #e3dddd;
+	margin: 0.6rem;
+}
+.offer-box .offer-block img{
+	margin: 0 auto;
+	display: block;
+	width: 70%;
+	height: 60%;
+}
+.offer-box .offer-block h4{
+	font-size: 1rem;
+	font-weight: 700;
+	text-align: center;
+}
 
 footer {
 	padding: 1rem 0;
 	text-align: center;
 }
+.copyright {
+margin: 0 auto;
+font-size: 0.9rem;
+}
+
+/* Social Icons */
+.social {
+  text-align:left;
+  a {
+    display: inline-block;
+    padding: 0.4rem;
+    width: 3rem;
+    height: 3rem;
+    margin: 0 2px;
+    background: #fff;
+    border-radius: 50%;
+    vertical-align: middle;
+    
+    }
+  }
+
+
 
 .product-image {
 	display: none;
