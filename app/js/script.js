@@ -1,30 +1,33 @@
+// const activeImage = document.querySelector(".product-image .active");
+// const productImages = document.querySelectorAll(".image-list img");
+// const navItem = document.querySelector('a.toggle-nav');
 
-const activeImage = document.querySelector(".product-image .active");
-const productImages = document.querySelectorAll(".image-list img");
-const navItem = document.querySelector('a.toggle-nav');
+// function changeImage(e) {
+//     activeImage.src = e.target.src;
+// }
 
-function changeImage(e) {
-	activeImage.src = e.target.src;
-}
-
-function toggleNavigation(){
-	this.nextElementSibling.classList.toggle('active');
-}
-
-productImages.forEach(image => image.addEventListener("click", changeImage));
-navItem.addEventListener('click', toggleNavigation);
+// function toggleNavigation() {
+//     this.nextElementSibling.classList.toggle('active');
+// }
+// {
+// productImages.forEach(image => image.addEventListener("click", changeImage));
+// navItem.addEventListener('click', toggleNavigation);
+// }
 
 {
     const form = document.querySelector('#contactForm');
     const inputs = form.querySelectorAll('input[required], textarea[required], select[required]');
 
-    //wyłączamy domyślną walidację
     form.setAttribute('novalidate', true);
 
     const displayFieldError = function(elem) {
         const fieldRow = elem.closest('.form-row');
         const fieldError = fieldRow.querySelector('.field-error');
+
+        //jeżeli komunikat z błędem pod polem nie istnieje...
         if (fieldError === null) {
+            //pobieramy z pola tekst błędu
+            //i tworzymy pole
             const errorText = elem.dataset.error;
             const divError = document.createElement('div');
             divError.classList.add('field-error');
@@ -36,6 +39,7 @@ navItem.addEventListener('click', toggleNavigation);
     const hideFieldError = function(elem) {
         const fieldRow = elem.closest('.form-row');
         const fieldError = fieldRow.querySelector('.field-error');
+        //jeżeli pobrane pole istnieje - usuń je
         if (fieldError !== null) {
             fieldError.remove();
         }
@@ -83,7 +87,7 @@ navItem.addEventListener('click', toggleNavigation);
         return fieldsAreValid;
     };
 
-    form.addEventListener('submit', function(e) {
+    form.addEventListener('submit', e => {
         e.preventDefault();
 
         //jeżeli wszystkie pola są poprawne...
@@ -93,12 +97,12 @@ navItem.addEventListener('click', toggleNavigation);
             const dataToSend = new FormData();
             [...elements].forEach(el => dataToSend.append(el.name, el.value));
 
-            const url = form.getAttribute('action');
-            const method = form.getAttribute('method');
-
             const submit = form.querySelector('[type="submit"]');
             submit.disabled = true;
             submit.classList.add('element-is-busy');
+
+            const url = form.getAttribute('action');
+            const method = form.getAttribute('method');
 
             fetch(url, {
                 method: method.toUpperCase(),
@@ -113,25 +117,30 @@ navItem.addEventListener('click', toggleNavigation);
                     ret.errors.map(function(el) {
                         return '[name="'+el+'"]'
                     });
-                    const selector = ret.errors.join(',');
-                    checkFieldsErrors(form.querySelectorAll(sekector));
 
+                    const badFields = form.querySelectorAll(ret.errors.join(','));
+                    checkFieldsErrors(badFields);
                 } else {
                     if (ret.status === 'ok') {
-                        //wyświetlamy komunikat powodzenia, cieszymy sie
                         const div = document.createElement('div');
                         div.classList.add('form-send-success');
 
-                        div.innerHTML = '<strong>Wiadomość została wysłana</strong><span>Dziękujemy za kontakt. Postaramy się odpowiedzieć jak najszybciej</span>';
                         form.parentElement.insertBefore(div, form);
+                        div.innerHTML = '<strong>Wiadomość została wysłana</strong><span>Dziękujemy za kontakt. Postaramy się odpowiedzieć jak najszybciej</span>';
                         form.remove();
                     }
 
                     if (ret.status === 'error') {
-                        //komunikat błędu, niepowodzenia
+                        //jeżeli istnieje komunikat o błędzie wysyłki
+                        //np. generowany przy poprzednim wysyłaniu formularza
+                        //usuwamy go, by nie duplikować tych komunikatów
+                        if (document.querySelector('.send-error')) {
+                            document.querySelector('.send-error').remove();
+                        }
                         const div = document.createElement('div');
                         div.classList.add('send-error');
-                        div.innerText = 'Wysłanie wiadomości się nie powiodło';
+                        div.innerHTML = 'Wysłanie wiadomości się nie powiodło';
+                        submit.parentElement.appendChild(div);
                     }
                 }
             }).catch(_ => {
@@ -141,5 +150,3 @@ navItem.addEventListener('click', toggleNavigation);
         }
     });
 }
-
-
