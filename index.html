@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,27 +8,29 @@
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <meta name="description" content="Świece sojowe z naturalnych składników | Nature Organic" />
   <link href="app/css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="node_modules\animate.css\animate.css">
   <title>Natural & Organic - naturalne świece sojowe</title>
   <!-- document-specific social tags -->
   <meta property="og:title" content="Natural Organic - naturalneswiece.com">
   <meta property="og:url" content="https://developer.mozilla.org/en-US/docs/Web/CSS/Universal_selectors">
   <meta name="twitter:url" content="https://developer.mozilla.org/en-US/docs/Web/CSS/Universal_selectors">
-  <meta name="twitter:title" content="Natural Organic - naturalneswiece.com">
+  <meta name="twitter:title" content="Natural & Organic - naturalneswiece.com">
   <meta property="og:description"
     content="Świece robione są ręcznie z wosku sojowego i naturalnych olejków zapachowych.">
   <meta name="description" content="Świece robione są ręcznie z wosku sojowego i naturalnych olejków zapachowych.">
   <meta name="twitter:description"
     content="Świece robione są ręcznie z wosku sojowego i naturalnych olejków zapachowych.">
+   
 </head>
+
 <body>
   <div class="container">
-    <div class="grid menu">
+    <div class="grid menu shake slower infinite">
       <div class="cc-profile-image column-xs-12 column-md-12">
-        <a href="#">
-          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+          <svg class="animated pulse slower infinite" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
             x="0px" y="0px" width="200px" height="200px" viewBox="0 0 200 200" enable-background="new 0 0 200 200"
             xml:space="preserve">
-            <circle id="bcgMain" fill="#E7AD8F" cx="100" cy="100" r="100" />
+            <circle id="bcgMain" class="pulse infinite bounce delay-2s" fill="#E7AD8F" cx="100" cy="100" r="100" />
             <g id="bcgTexture">
               <path fill="none" d="M75.57,59.863c-0.308-0.435-1.034-0.712-1.373-1.168c-0.293-0.394-0.581-0.792-0.966-1.04
                c-0.293-0.27-1.62-0.143-1.781,0.713c-0.045,0.243,0.316,1.276,0.464,1.483c0.276,0.391,0.8,0.652,1.06,1.101
@@ -1276,7 +1279,7 @@
                c0.234,0.139,0.49,0.209,0.771,0.209C135.906,129.852,136.241,129.745,136.518,129.531z" />
             </g>
           </svg>
-        </a>
+      
       </div>
       <div class="column-xs-12 column-md-12">
         <div class="social">
@@ -1358,7 +1361,7 @@
 
       </div>
 
-      <div class="grid offer-box">
+      <div class="grid offer-box wow slideInLeft" data-wow-duration="2s" data-wow-delay="5s">
         <div class="offer-block icon-capacity column-xs-6 column-md-3">
           <img src="app/img/icon-capacity.svg">
           <h4>Pojemność 120 ml</h4>
@@ -1367,22 +1370,21 @@
         <div class="offer-block column-xs-6 column-md-3">
           <img src="app/img/icon-price.svg">
           <h4>Promocyjna cena</h4>
-
-
+ 
         </div>
         <div class="offer-block column-xs-6 column-md-3">
           <img src="app/img/icon-transport.svg">
           <h4>Przesyłka gratis*</h4>
 
         </div>
-        <div class="offer-block column-xs-6 column-md-3">
+        <div class="offer-block column-xs-6 column-md-3"> 
           <img src="app/img/icon-nature.svg"">
           <h4>Naturalny wosk sojowy</h4>
          
         </div>
        
       </div>
-      <div class=" aster1 column-xs12 column-md-12">
+      <div class="aster1 column-xs12 column-md-12">
           <p>*przy zamówieniu powyżej 100 PLN</p>
         </div>
         <div class="b2 column-xs12 column-md-12">
@@ -1400,40 +1402,48 @@
       </div>
     </div>
   </footer>
-<div class="container">
-   
-  <form class="form" id="contactForm" method="post" novalidate action="send-script.php">
-        <div class="form-row">
-            <label for="field-name">Name*</label>
-            <input value="Imię i nazwisko" type="text" name="name" required id="field-name" data-error="Wypełnij to pole" pattern="[a-zA-ZąĄććęęłŁńŃóÓśŚżŻŹŹ ]+">
-        </div>
-        <div class="form-row">
-            <label for="field-email">Email*</label>
-            <input value="Adres email" type="email" name="email" required id="field-email" data-error="Wpisz poprawny email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+">
-        </div>
-        <div class="form-row">
-            <label for="field-message">Message*</label>
-            <textarea name="message" required data-error="Musisz wypełnić pole" id="field-message" pattern=".+">Treść zapytania</textarea>
-        </div>
-        <div class="form-row">
-            <label class="checkbox-cnt">
-                <input type="checkbox" required data-error="Musisz wypełnić pole" name="regulation">
-                <i class="state" aria-hidden="true"></i>
-                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In libero arcu, vulputate sit amet mattis sit amet, ultrices in erat. Aenean suscipit arcu ac lorem lacinia ut scelerisque turpis commodo.</span>
-            </label>
-        </div>
-        <div class="form-row">
-            <button type="submit" class="submit-btn">
-                Wyślij
-            </button>
-        </div>
+  <div class="container">
+
+    <form class="form" id="contactForm" method="post" novalidate action="send-script.php">
+      <div class="form-row">
+        <label for="field-name">Name*</label>
+        <input value="Imię i nazwisko" type="text" name="name" required id="field-name" data-error="Wypełnij to pole"
+          pattern="[a-zA-ZąĄććęęłŁńŃóÓśŚżŻŹŹ ]+">
+      </div>
+      <div class="form-row">
+        <label for="field-email">Email*</label>
+        <input value="Adres email" type="email" name="email" required id="field-email" data-error="Wpisz poprawny email"
+          pattern="[^@\s]+@[^@\s]+\.[^@\s]+">
+      </div>
+      <div class="form-row">
+        <label for="field-message">Message*</label>
+        <textarea name="message" required data-error="Musisz wypełnić pole" id="field-message"
+          pattern=".+">Treść zapytania</textarea>
+      </div>
+      <div class="form-row">
+        <label class="checkbox-cnt">
+          <input type="checkbox" required data-error="Musisz wypełnić pole" name="regulation">
+          <i class="state" aria-hidden="true"></i>
+          <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In libero arcu, vulputate sit amet mattis sit
+            amet, ultrices in erat. Aenean suscipit arcu ac lorem lacinia ut scelerisque turpis commodo.</span>
+        </label>
+      </div>
+      <div class="form-row">
+        <button type="submit" class="submit-btn">
+          Wyślij
+        </button>
+      </div>
     </form>
 
 
-</div>
- 
+  </div>
+
 
   <script src="app/js/script.js"></script>
+  <script src="node_modules/wowjs/dist/wow.js"></script>
+ <script>
+ new WOW().init();
+ </script>
 </body>
 
 </html>
