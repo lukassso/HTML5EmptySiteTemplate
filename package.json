@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lukassso/HTML5EmptySiteTemplate.git"
+    "url": "git+https://github.com/lukassso/NaturalOrganic.git"
   },
   "author": "lk",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/lukassso/HTML5EmptySiteTemplate/issues"
+    "url": "https://github.com/lukassso/NaturalOrganic/issues"
   },
-  "homepage": "https://github.com/lukassso/HTML5EmptySiteTemplate#readme",
+  "homepage": "https://github.com/lukassso/NaturalOrganic#readme",
   "devDependencies": {
     "browser-sync": "^2.26.7",
     "del": "^4.0.0",
