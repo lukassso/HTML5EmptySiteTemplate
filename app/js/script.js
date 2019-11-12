@@ -1,5 +1,5 @@
-
-
+// import('wowjs');
+// require('wowjs');
 
 // var wow = new WOW(
 //     {
@@ -15,7 +15,9 @@
 //       scrollContainer: null // optional scroll container selector, otherwise use window
 //     }
 //   );
-//   wow.init();
+new WOW().init();
+// wow.init();
+//  new WOW().init();
 
 
 const activeImage = document.querySelector(".product-image .active");
